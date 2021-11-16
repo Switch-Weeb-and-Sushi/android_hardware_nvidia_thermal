@@ -59,7 +59,8 @@ extern int cooling_data_count;
 
 extern int *num_cpus_total;
 
-
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunreachable-code-loop-increment"
 
 static int update_threshold_path(char **path, char *type_cmp, char *type, char *file_name)
 {
@@ -480,3 +481,6 @@ ssize_t get_cooling_devices(cooling_device_t *list, size_t size) {
 
     return count;
 }
+
+#pragma clang diagnostic pop
+
